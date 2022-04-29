@@ -1,0 +1,27 @@
+html {
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+div {
+  width: 100%;
+  padding: 100px;
+}
+.zero {
+  background-color: brown;
+}
+.one {
+  background-color: yellow;
+  margin: 0 auto;
+}
+.two {
+  background-color: green;
+  margin: 0 auto;
+}
+.three {
+  background-color: aqua;
+  margin: 0 auto;
+}
