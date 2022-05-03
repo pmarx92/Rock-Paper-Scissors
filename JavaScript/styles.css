@@ -8,7 +8,7 @@ html {
 }
 div {
   width: 100%;
-  padding: 100px;
+  padding: 10px;
 }
 .zero {
   background-color: brown;
@@ -24,4 +24,22 @@ div {
 .three {
   background-color: aqua;
   margin: 0 auto;
+}
+.gameBoard {
+  display: flex;
+  flex-direction: column;
+  margin-top: 25px;
+}
+.gameBoard span {
+  font-size: 18px;
+}
+.scoreBoardTop {
+  margin: 0 auto;
+  width: 100%;
+
+}
+.scoreBoard {
+  font-size: 26px;
+  padding: 25px;
+ 
 }

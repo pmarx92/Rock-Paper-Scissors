@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,12 +9,33 @@
     <script src="js.js" defer></script>
     <title>Test</title>
 </head>
+
 <body>
-<div>
-    <button>Rock</button>
-    <button>Paper</button>
-    <button>Scissors</button>
-</div>
+    <div class="scoreBoardTop">
+        <h3>
+            Round: <span id="round">0</span>
+        </h3>
+        <h3>
+            Player <span id="playerScore">0</span> - <span id="computerScore">0</span> Computer
+        </h3>
+    </div>
+    <div>
+        <div class="gameBoard">
+            <span id="player">Player:</span>
+        </div>
+        <div class="gameBoard">
+            <span id="computer">Computer:</span>
+        </div>
+        <div class="gameBoard">
+            <span id="gameStatus">Game:</span>
+        </div>
+    </div>
+
+
+    <button onclick="playRound(0), game()">Rock</button>
+    <button onclick="playRound(1), game()">Paper</button>
+    <button onclick="playRound(2), game()">Scissors</button>
+
 </body>
 
 </html>

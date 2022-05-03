@@ -1,56 +1,64 @@
 const items = ["Rock", "Paper", "Scissors"];
-const playerInput = parseInt(prompt("1 for Rock, 2 for Paper or 3 for Scissors?"));
+let playerScore = 0;
+let computerScore = 0;
+let round = 0;
 
 function computerPlay() {
   return items[~~(Math.random() * items.length)];
 }
 
-function playerChoice() {
-
-  if (playerInput === 1) {
+function playerChoice(playerInput) {
+  if (playerInput == 0) {
     return items[0];
-  } else if (playerInput === 2) {
+  } else if (playerInput == 1) {
     return items[1];
-  } else if (playerInput === 3) {
+  } else if (playerInput == 2) {
     return items[2];
   }
 }
 
+function playRound(playerInput) {
 
-function playRound() {
-  let playerSelection = playerChoice();
+  let playerSelection = playerChoice(playerInput);
   computerSelection = computerPlay();
 
-  alert("The Player choose: " + playerSelection);
-  alert("The computer choose: " + computerSelection);
-
-
   if (playerSelection === computerSelection) {
-    alert("Tie!");
+    document.getElementById("gameStatus").innerHTML = "Game: " + "Tie!";
+    round++;
   } else if (playerSelection === items[0] && computerSelection === items[2]) {
-    alert("You Win! Rock beats Scissors.");
+    playerScore++;
+    round++;
+    document.getElementById("gameStatus").innerHTML = "Game: " + "You Win! Rock beats Scissors.";
+    document.getElementById("playerScore").textContent = playerScore;
   } else if (playerSelection === items[1] && computerSelection === items[0]) {
-    alert("You Win! Paper beats Rock.");
+    playerScore++;
+    round++;
+    document.getElementById("gameStatus").innerHTML = "Game: " + "You Win! Paper beats Rock.";
+    document.getElementById("playerScore").textContent = playerScore;
   } else if (playerSelection === items[2] && computerSelection === items[1]) {
-    alert("You Win! Scissors beat Paper.");
+    playerScore++;
+    round++;
+    document.getElementById("gameStatus").innerHTML = "Game: " + "You Win! Scissors beat Paper.";
+    document.getElementById("playerScore").textContent = playerScore;
   } else {
-    alert("You Lose!");
+    computerScore++;
+    round++;
+    document.getElementById("gameStatus").innerHTML = "Game: " + "You Lose!";
+    document.getElementById("computerScore").textContent = computerScore;
   }
-  console.log("The Player choose: " + playerSelection);
-  console.log("The computer choose: " + computerSelection);
+  document.getElementById("player").innerHTML = "Player: " + playerSelection;
+  document.getElementById("computer").innerHTML = "Computer: " + computerSelection;
+  document.getElementById("round").innerHTML = round;
 }
 
-
-
-/*
-game();
 function game() {
-  for (let i = 1; i < 6; i++) {
-    console.log(i);
-    playRound();
+  if (playerScore == 5) {
+
+    alert("You Won!");
+  } else if (computerScore == 5) {
+    alert("You Lost!");
+  } else {
 
   }
-}
-*/
 
-// buttons is a node list. It looks and acts much like an array.
+}
