@@ -58,16 +58,19 @@ function playRound(playerInput) {
   document.getElementById("computer").innerHTML = "Computer: " + computerSelection;
   document.getElementById("round").innerHTML = round;
 }
+
 function disableButtons() {
   rock.disabled = true;
   paper.disabled = true;
   scissors.disabled = true;
 }
+
 function enableButtons() {
   rock.disabled = false;
   paper.disabled = false;
   scissors.disabled = false;
 }
+
 function restart() {
   playerScore = 0;
   computerScore = 0;
@@ -81,8 +84,6 @@ function restart() {
   enableButtons();
 }
 
-restartBtn.addEventListener('click', restart());
-
 function game() {
   if (playerScore == 5) {
     winOrLose.innerHTML = "You Won!!"
@@ -92,6 +93,5 @@ function game() {
     winOrLose.innerHTML = "Sad, you lost! :("
     disableButtons()
     winOrLose.classList.add("lose");
-
   }
 }
